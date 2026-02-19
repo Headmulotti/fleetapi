@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Command</key>
+    <dict>
+        <key>RequestType</key>
+        <string>EnableLostMode</string>
+        <key>Message</key>
+        <string>This device is lost. Please call IT Support to return it.</string>
+        <key>PhoneNumber</key>
+        <string>+1-800-555-0000</string>
+        <key>Footnote</key>
+        <string>Property of Company IT</string>
+    </dict>
+    <key>CommandUUID</key>
+    <string>COMMAND_UUID_PLACEHOLDER</string>
+</dict>
+</plist>

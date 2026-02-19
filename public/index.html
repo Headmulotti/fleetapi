@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet MDM Commander</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fleet MDM Commander</h1>
+        
+        <div id="status-panel" class="panel">
+            <h2>Connection</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="address">Fleet URL:</label>
+                    <input type="text" id="address" name="address" value="https://devmdm.cyvonis.cloud" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" id="connect-btn">Connect to Fleet</button>
+            </form>
+            <div id="connection-status" class="status-indicator">Disconnected</div>
+        </div>
+
+        <div id="main-content" class="hidden">
+            <div class="panel">
+                <h2>Hosts</h2>
+                <button id="refresh-hosts-btn">Refresh Hosts</button>
+                <div class="table-container">
+                    <table id="hosts-table">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Hostname</th>
+                                <th>UUID</th>
+                                <th>Platform</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Hosts will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Run MDM Command</h2>
+                <div class="form-group">
+                    <label for="payload-select">Select Payload (.xml):</label>
+                    <select id="payload-select">
+                        <option value="">-- Select a Payload --</option>
+                        <!-- Payloads will be populated here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p>Selected Hosts: <span id="selected-count">0</span></p>
+                </div>
+                <button id="run-command-btn" disabled>Run Command</button>
+            </div>
+
+            <div class="panel">
+                <h2>Output Log</h2>
+                <pre id="output-log"></pre>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
